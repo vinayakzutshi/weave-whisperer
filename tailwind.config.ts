@@ -47,6 +47,18 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        surface: {
+          DEFAULT: "hsl(var(--surface))",
+          strong: "hsl(var(--surface-strong))",
+        },
+        ink: {
+          soft: "hsl(var(--ink-soft))",
+        },
+        thread: "hsl(var(--thread))",
+        loom: "hsl(var(--loom))",
+        linen: "hsl(var(--linen))",
+        weft: "hsl(var(--weft))",
+        warp: "hsl(var(--warp))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -80,10 +92,20 @@ export default {
             height: "0",
           },
         },
+        "shuttle-scan": {
+          "0%": { transform: "translateX(-110%)" },
+          "100%": { transform: "translateX(110%)" },
+        },
+        "thread-rise": {
+          "0%": { opacity: "0", transform: "translateY(18px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "shuttle-scan": "shuttle-scan 2.4s ease-in-out infinite alternate",
+        "thread-rise": "thread-rise 0.7s ease-out both",
       },
     },
   },
