@@ -61,18 +61,22 @@ export async function compareImages(
     },
     body: JSON.stringify({
       model: FIREWORKS_MODEL,
-      max_tokens: 16,
-      temperature: 0.1,
+      max_tokens: 248,
+      temperature: 0.0,
       messages: [
+        {
+          role: "system",
+          content: "You are a textile weave analysis expert. Your ONLY task is to compare two images and answer 'Yes' if they show the same weave pattern, or 'No' if they do not. Never provide explanations or descriptions. Answer with exactly one word: 'Yes' or 'No'."
+        },
         {
           role: "user",
           content: [
-            {
-              type: "text",
-              text: `Answer only Yes or No. ${aspect}`,
-            },
             imageBlock(uri1),
             imageBlock(uri2),
+            {
+              type: "text",
+              text: `${aspect}`,
+            },
           ],
         },
       ],
@@ -84,5 +88,6 @@ export async function compareImages(
   }
 
   const data = await response.json();
+  console.log("Agent Response:", data.choices[0].message.content);
   return (data.choices[0].message.content as string).trim();
 }

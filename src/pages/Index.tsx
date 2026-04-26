@@ -39,15 +39,19 @@ const Index = () => {
           API_KEY,
           file,
           entry.imagePath,
-          "Do these two fabric images show the same type of weave pattern?"
+          "Do these two images show the same weave pattern?"
         );
 
+        console.log(`Checking pattern: ${entry.name} - Agent Response: ${answer}`);
+
         if (answer.toLowerCase().startsWith("yes")) {
+          console.log(`Match found: ${entry.name}`);
           setPattern(entry.name);
           return;
         }
       }
 
+      console.log("No match found in knowledge base.");
       // No match found
       setPattern("Unknown Pattern");
     } catch (err: unknown) {
