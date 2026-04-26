@@ -4,7 +4,7 @@
  */
 
 const FIREWORKS_URL = "https://api.fireworks.ai/inference/v1/chat/completions";
-const FIREWORKS_MODEL = "accounts/fireworks/models/firellava-13b";
+const FIREWORKS_MODEL = "accounts/fireworks/models/kimi-k2p6";
 
 /** Convert a File or public-asset URL to a base64 data-URI. */
 async function toDataUri(source: File | string): Promise<string> {
